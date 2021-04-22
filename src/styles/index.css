@@ -1,0 +1,9 @@
+body {
+	background-color: rgb(59, 45, 45);
+	color: white;
+	text-align: center;
+}
+
+body h1 {
+	font-size: 3rem;
+}
