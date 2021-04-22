@@ -1,0 +1,11 @@
+.global__menu {
+	position: sticky;
+	top: 10px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.global__menu img {
+	width: 40px;
+	filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
+}

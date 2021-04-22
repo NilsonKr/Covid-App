@@ -31,7 +31,7 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|svg|webp)$/i,
-				use: 'asset/resource',
+				type: 'asset/resource',
 			},
 			{
 				test: /\.css$/,

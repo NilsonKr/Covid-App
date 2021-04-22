@@ -1,0 +1,22 @@
+.main {
+	width: 100%;
+	padding: 20px 10px 0;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header span {
+	display: inline-block;
+	margin-right: 5px;
+	width: 35px;
+	height: 35px;
+	background: url('../../assets/virus.svg') center / cover no-repeat;
+}
+
+.header h2 {
+	font-size: 2rem;
+	font-family: var(--fancy-font);
+}
