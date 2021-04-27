@@ -1,19 +1,12 @@
-import React, { useState, useMemo } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
+import useGlobalResponsive from '@hooks/useGlobalResponsive';
 
 import GlobalIcon from '../assets/earth-globe.svg';
 
 import '@styles/components/Global.css';
 
 const Global = () => {
-	const [isOpen, setOpen] = useState(false);
-	const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
-
-	useMemo(() => {
-		if (isDesktop) {
-			setOpen(true);
-		}
-	}, [isDesktop]);
+	const [isOpen, setOpen] = useGlobalResponsive();
 
 	return (
 		<section className={(isOpen && 'global global--active ') || ''}>
