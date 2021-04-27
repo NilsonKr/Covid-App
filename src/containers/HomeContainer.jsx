@@ -8,7 +8,6 @@ const HomeContainer = () => {
 	return (
 		<div className='home'>
 			<Global />
-			<h1>Home</h1>
 		</div>
 	);
 };
