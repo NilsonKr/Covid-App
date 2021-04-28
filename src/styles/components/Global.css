@@ -65,7 +65,7 @@
 	.global {
 		min-height: 120px;
 		height: 100%;
-		width: clamp(60%, 100%, 70%);
+		width: clamp(50%, 100%, 60%);
 		padding: 10px 0;
 		display: flex;
 		align-items: center;
