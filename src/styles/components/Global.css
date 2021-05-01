@@ -1,6 +1,6 @@
 .global {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-color: var(--bg-color);
 	display: flex;
 	justify-content: center;
@@ -64,7 +64,6 @@
 	}
 	.global {
 		min-height: 120px;
-		height: 100%;
 		width: clamp(50%, 100%, 1100px);
 		padding: 10px 0;
 		display: flex;
