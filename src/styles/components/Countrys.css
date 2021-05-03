@@ -89,11 +89,9 @@
 	}
 	.countrys__body {
 		display: initial;
-		overflow-x: initial;
 		overflow-y: scroll;
 	}
 	.country__info {
-		width: 100%;
 		padding: 15px;
 		border-right: none;
 		border-bottom: 1px solid #f3818e77;
