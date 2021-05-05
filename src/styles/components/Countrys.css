@@ -1,6 +1,6 @@
 .countrys {
-	margin-top: 50px;
-	width: clamp(320px, 100%, 1100px);
+	min-width: 320px;
+	width: 100%;
 	padding: 10px 5px;
 }
 .countrys__container {

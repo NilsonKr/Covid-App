@@ -6,7 +6,6 @@ import '@styles/components/Countrys.css';
 
 const Countrys = () => {
 	const { data } = useContext(Context);
-	console.log(data.Countries);
 
 	return (
 		<section className='countrys'>

@@ -6,6 +6,7 @@
 
 :root {
 	--bg-color: #f2f2f2;
+	--second-bg: white;
 	--font-color: rgba(44, 43, 55, 0.7);
 	--second-color: #f3818e;
 	--title-color: black;
@@ -15,6 +16,6 @@
 }
 
 body {
-	background-color: #f2f2f2;
+	background-color: var(--bg-color);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
