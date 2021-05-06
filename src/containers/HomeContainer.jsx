@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '@context/ContextApp';
 
 import Global from '@components/Global';
@@ -8,20 +8,23 @@ import SearchBar from '@components/SearchBar';
 import '@styles/components/Home.css';
 
 const HomeContainer = () => {
-	const { data, setData, CovidApi } = useContext(Context);
+	const { data, setData, setCountries, CovidApi } = useContext(Context);
 
 	useEffect(() => {
 		fetch(CovidApi)
 			.then(data => data.json())
-			.then(data => setData(data))
+			.then(data => {
+				setCountries(data.Countries);
+				setData(data);
+			})
 			.catch(err => console.error(err));
 	}, []);
 
-	console.log();
+	console.log(data);
 
 	return (
 		<div className='home'>
-			{data.Global && (
+			{data.Countries && (
 				<>
 					<Global />
 					<SearchBar />

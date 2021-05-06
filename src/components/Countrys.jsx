@@ -5,7 +5,7 @@ import { countryCode } from 'emoji-flags';
 import '@styles/components/Countrys.css';
 
 const Countrys = () => {
-	const { data } = useContext(Context);
+	const { countries } = useContext(Context);
 
 	return (
 		<section className='countrys'>
@@ -19,13 +19,17 @@ const Countrys = () => {
 					</div>
 				</div>
 				<div className='countrys__body'>
-					{data.Countries.map(countrie => (
+					{countries.map(countrie => (
 						<div className='country__info' key={countrie.ID}>
 							<h3>{countryCode(countrie.CountryCode).emoji}</h3>
 							<h3>{countrie.Country}</h3>
 							<h3>{countrie.TotalConfirmed.toLocaleString('de-DE')}</h3>
 							<h3>{countrie.TotalDeaths.toLocaleString('de-DE')}</h3>
-							<h3>{countrie.TotalRecovered.toLocaleString('de-DE')}</h3>
+							<h3>
+								{countrie.TotalRecovered === 0
+									? '-'
+									: countrie.TotalRecovered.toLocaleString('de-DE')}
+							</h3>
 						</div>
 					))}
 				</div>
