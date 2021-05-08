@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '@styles/components/Layout.css';
 
@@ -7,7 +8,9 @@ const Layout = props => {
 		<div className='main'>
 			<header className='header'>
 				<span></span>
-				<h2>COVID APP</h2>
+				<Link to='/' className='header--title'>
+					COVID APP
+				</Link>
 			</header>
 			{props.children}
 		</div>

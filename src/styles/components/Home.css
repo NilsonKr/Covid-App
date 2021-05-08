@@ -4,10 +4,24 @@
 	margin-top: 30px;
 }
 
+.charts--button {
+	position: absolute;
+	top: 80px;
+	right: 10px;
+	width: 60px;
+	padding: 10px;
+	border-radius: 50%;
+	box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.336), -5px -5px 6px var(--second-bg);
+	cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) {
 	.home {
 		display: flex;
 		flex-flow: column;
 		align-items: center;
+	}
+	.charts--button {
+		top: 20px;
 	}
 }

@@ -16,7 +16,10 @@
 	background: url('../../assets/virus.svg') center / cover no-repeat;
 }
 
-.header h2 {
+.header--title {
+	font-weight: bold;
 	font-size: 2rem;
 	font-family: var(--fancy-font);
+	color: var(--title-color);
+	text-decoration: none;
 }
