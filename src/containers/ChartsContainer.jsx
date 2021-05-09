@@ -4,6 +4,7 @@ import Chart from '@components/Chart';
 
 const ChartsContainer = () => {
 	const [data, setData] = useState([]);
+	const [vaccines, setVaccines] = useState([]);
 
 	useEffect(() => {
 		fetch(
@@ -14,12 +15,14 @@ const ChartsContainer = () => {
 			.catch(err => console.log(err));
 	}, []);
 
+	console.log(data);
+
 	return (
 		<div>
 			{data.length && (
 				<>
 					<h1>Welcome To Charts Section</h1>
-					<Chart country={data[37]} />
+					<Chart countrys={[data[37], data[32], data[27]]} />
 				</>
 			)}
 		</div>

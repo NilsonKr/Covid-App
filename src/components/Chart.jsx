@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
 
-const Chart = ({ country }) => {
-	const [vaccines, setVaccines] = useState([]);
+const Chart = ({ countrys }) => {
+	console.log(countrys);
 
 	return (
 		<div>
 			<Line
 				data={{
-					labels: getVaccineData(country).dates,
-					datasets: [
-						{
-							label: '# of Votes',
-							data: getVaccineData(country).vaccines,
-							backgroundColor: 'rgba(75, 192, 192, 0.2)',
-							borderColor: 'black',
-							borderWidth: 2,
-							tension: 0.4,
-							fill: true,
-						},
-					],
+					labels: getVaccineData(countrys[0]).dates,
+					datasets: countrys.map(country => ({
+						label: country.country,
+						data: getVaccineData(country).vaccines,
+						backgroundColor: 'rgba(75, 192, 192, 0.2)',
+						borderColor: 'black',
+						borderWidth: 2,
+						tension: 0.4,
+						fill: true,
+					})),
 				}}
 				height={600}
 				options={{
@@ -28,7 +26,7 @@ const Chart = ({ country }) => {
 					scales: {
 						y: {
 							beginAtZero: true,
-							max: getVaccineData(country).limit + 10000,
+							max: 1000000,
 						},
 					},
 				}}
