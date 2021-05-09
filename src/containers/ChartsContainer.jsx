@@ -14,14 +14,12 @@ const ChartsContainer = () => {
 			.catch(err => console.log(err));
 	}, []);
 
-	console.log(data[0]);
-
 	return (
 		<div>
 			{data.length && (
 				<>
 					<h1>Welcome To Charts Section</h1>
-					<Chart />
+					<Chart country={data[37]} />
 				</>
 			)}
 		</div>
