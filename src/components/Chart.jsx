@@ -3,8 +3,6 @@ import { Line } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
 
 const Chart = ({ countrys }) => {
-	console.log(countrys);
-
 	return (
 		<div>
 			<Line

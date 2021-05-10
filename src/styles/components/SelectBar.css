@@ -1,0 +1,68 @@
+.selectBox {
+	position: relative;
+	width: 80%;
+	min-height: 80px;
+	margin: 10px 0;
+	padding: 0 10px;
+	display: grid;
+	grid-template-columns: 1fr 40px;
+	place-items: center;
+	gap: 10px;
+	border-radius: 10px;
+	border: 2px solid var(--second-color);
+	background-color: var(--second-bg);
+}
+
+.selectBox__data {
+	display: flex;
+	width: 100%;
+}
+
+.selectBox--country {
+	padding: 10px;
+	margin: 0 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--font-color);
+	border-radius: 30px;
+}
+
+.selectBox--country span {
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: var(--second-bg);
+}
+
+.selectBox--country img {
+	margin-left: 3px;
+	width: 18px;
+	vertical-align: middle;
+}
+
+.selectBox__data input {
+	border: none;
+	outline: none;
+	font-size: 1.3rem;
+	color: var(--font-color);
+}
+
+.selectBox--icon {
+	background: transparent;
+	padding: 10px;
+	cursor: pointer;
+	transition: 0.5s background;
+	border-radius: 50%;
+}
+
+.selectBox--icon span {
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-right: 4px solid black;
+	border-bottom: 4px solid black;
+	transform: rotate(45deg);
+}
+.selectBox--icon:hover {
+	background: #cecece;
+}

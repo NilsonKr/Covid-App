@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ContextApp from '@context/ContextApp';
 import Layout from '@components/Layout';
 import Home from './containers/HomeContainer';
-import Charts from './containers/ChartsContainer';
+import Charts from './containers/VaccinesContainer';
 
 const App = () => {
 	return (
