@@ -15,7 +15,10 @@ const ChartsContainer = () => {
 			'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json'
 		)
 			.then(data => data.json())
-			.then(data => setVaccines(data))
+			.then(data => {
+				const newData = data.map(item => ({ ...item, isAdded: false }));
+				setVaccines(newData);
+			})
 			.catch(err => console.log(err));
 	}, []);
 
