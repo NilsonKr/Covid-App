@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
 
@@ -24,7 +24,7 @@ const Chart = ({ countrys }) => {
 					scales: {
 						y: {
 							beginAtZero: true,
-							max: 1000000,
+							max: 2000000,
 						},
 					},
 				}}

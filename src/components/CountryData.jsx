@@ -3,13 +3,12 @@ import addCountry from '../utils/addCountry';
 
 import '@styles/components/CountryData.css';
 
-const CountryData = ({ countrys, choosen, setChoosen }) => {
-	console.log(choosen);
-
+const CountryData = ({ countrys, choosen, setChoosen, setQuery }) => {
 	const handleAdd = country => {
 		const newChoosen = addCountry(choosen, country);
 		country.isAdded = !country.isAdded;
 
+		setQuery('');
 		setChoosen(newChoosen);
 	};
 

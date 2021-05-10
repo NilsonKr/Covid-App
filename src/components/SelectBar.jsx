@@ -14,6 +14,7 @@ const SelectBar = ({ choosen, setChoosen }) => {
 	const [query, setQuery] = useState('');
 	const searchInput = useRef(null);
 
+	//Render in order of query
 	const filteredCountries = useSearch(query, vaccines);
 
 	const handleAdd = country => {
@@ -40,7 +41,8 @@ const SelectBar = ({ choosen, setChoosen }) => {
 					ref={searchInput}
 					type='text'
 					placeholder='Select a country...'
-					onClick={() => setOpen(!isOpen)}
+					value={query}
+					onClick={() => setOpen(true)}
 					onChange={() => setQuery(searchInput.current.value)}
 				/>
 			</div>
@@ -55,6 +57,7 @@ const SelectBar = ({ choosen, setChoosen }) => {
 					countrys={filteredCountries}
 					choosen={choosen}
 					setChoosen={setChoosen}
+					setQuery={setQuery}
 				/>
 			)}
 		</section>

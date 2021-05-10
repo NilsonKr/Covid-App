@@ -28,7 +28,7 @@ const ChartsContainer = () => {
 				<>
 					<SelectBar choosen={countries} setChoosen={setChoosen} />
 					<section className='chart__container'>
-						<Chart countrys={[vaccines[37], vaccines[32], vaccines[27]]} />
+						<Chart countrys={countries.length ? countries : [{ ...vaccines[37] }]} />
 					</section>
 				</>
 			)}
