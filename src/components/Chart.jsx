@@ -2,10 +2,10 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
 import getMax from '../utils/getMaxVaccinated';
+import getColor from '../utils/randomColors';
 
 //TO-DOS:
 //Aleatory Colors
-//Get Max-vaccinated
 
 const Chart = ({ countrys }) => {
 	return (
@@ -16,7 +16,7 @@ const Chart = ({ countrys }) => {
 					datasets: countrys.map(country => ({
 						label: country.country,
 						data: getVaccineData(country).vaccines,
-						backgroundColor: 'rgba(75, 192, 192, 0.2)',
+						backgroundColor: getColor(),
 						borderColor: 'black',
 						borderWidth: 2,
 						tension: 0.4,
