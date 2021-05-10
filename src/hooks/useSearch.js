@@ -5,7 +5,9 @@ const useSearch = (query, countries) => {
 
 	useMemo(() => {
 		const newCountries = countries.filter(country => {
-			return country.Country.toLowerCase().includes(query.toLowerCase());
+			const countryName = country.country || country.Country;
+
+			return countryName.toLowerCase().includes(query.toLowerCase());
 		});
 
 		setFiltered(newCountries);

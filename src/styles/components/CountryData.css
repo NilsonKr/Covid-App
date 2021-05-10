@@ -13,21 +13,18 @@
 .countryDataBox--country {
 	width: 100%;
 	padding: 5px 0 5px 10px;
-	margin: 5px 0;
+	margin: 10px 0;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .countryDataBox--country h2 {
 	font-size: 1.2rem;
 	font-weight: 700;
+	margin: 0 5px;
 }
 
-.checkbox {
-	display: block;
-	margin: 0 5px;
-	cursor: pointer;
-}
 .checkbox input {
 	opacity: 0;
 	width: 0;
@@ -39,6 +36,10 @@
 	width: 20px;
 	height: 20px;
 	border-radius: 3px;
+}
+
+.countryDataBox--country:hover {
+	background-color: #e4e4e4ce;
 }
 
 .checkMark::after {
