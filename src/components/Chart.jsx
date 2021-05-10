@@ -1,6 +1,11 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
+import getMax from '../utils/getMaxVaccinated';
+
+//TO-DOS:
+//Aleatory Colors
+//Get Max-vaccinated
 
 const Chart = ({ countrys }) => {
 	return (
@@ -24,7 +29,7 @@ const Chart = ({ countrys }) => {
 					scales: {
 						y: {
 							beginAtZero: true,
-							max: 2000000,
+							max: getMax(countrys) + 100000,
 						},
 					},
 				}}
