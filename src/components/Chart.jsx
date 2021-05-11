@@ -1,24 +1,21 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 import getVaccineData from '../utils/getVaccineData';
 import getMax from '../utils/getMaxVaccinated';
-import getColor from '../utils/randomColors';
+import getVaccineLabel from '../utils/getVaccineLabel';
 
-//TO-DOS:
-//Aleatory Colors
-
-const Chart = ({ countrys }) => {
+const Chart = ({ countries }) => {
 	return (
 		<div>
 			<Line
 				data={{
-					labels: getVaccineData(countrys[0]).dates,
-					datasets: countrys.map(country => ({
+					labels: getVaccineLabel(countries),
+					datasets: countries.map(country => ({
 						label: country.country,
 						data: getVaccineData(country).vaccines,
-						backgroundColor: getColor(),
+						backgroundColor: country.color,
 						borderColor: 'black',
-						borderWidth: 2,
+						borderWidth: 1,
 						tension: 0.4,
 						fill: true,
 					})),
@@ -29,7 +26,26 @@ const Chart = ({ countrys }) => {
 					scales: {
 						y: {
 							beginAtZero: true,
-							max: getMax(countrys) + 100000,
+							max: getMax(countries) + 100000,
+						},
+					},
+					plugins: {
+						tooltip: {
+							bodyColor: '#cecece',
+							callbacks: {
+								labelTextColor: function () {
+									return 'white';
+								},
+								beforeBody: function (item) {
+									//Match The index of label with the correspond day data of the country
+									const country = countries.find(
+										country => item[0].dataset.label === country.country
+									);
+									const date = country.data[item[0].dataIndex - 1].date;
+
+									return `Date : ${date}`;
+								},
+							},
 						},
 					},
 				}}

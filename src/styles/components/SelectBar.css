@@ -19,7 +19,7 @@
 }
 
 .selectBox--country {
-	padding: 10px;
+	padding: 5px;
 	margin: 0 5px;
 	display: flex;
 	align-items: center;
@@ -32,6 +32,7 @@
 .selectBox--country span {
 	font-weight: bold;
 	font-size: 1.2rem;
+	text-align: center;
 	color: var(--second-bg);
 }
 

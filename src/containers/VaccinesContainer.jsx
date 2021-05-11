@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Context } from '@context/ContextApp';
+import getColor from '../utils/randomColors';
 
 import Chart from '@components/Chart';
 import SelectBar from '@components/SelectBar';
@@ -16,7 +17,11 @@ const ChartsContainer = () => {
 		)
 			.then(data => data.json())
 			.then(data => {
-				const newData = data.map(item => ({ ...item, isAdded: false }));
+				const newData = data.map(item => ({
+					...item,
+					isAdded: false,
+					color: getColor(),
+				}));
 				setVaccines(newData);
 			})
 			.catch(err => console.log(err));
@@ -28,7 +33,7 @@ const ChartsContainer = () => {
 				<>
 					<SelectBar choosen={countries} setChoosen={setChoosen} />
 					<section className='chart__container'>
-						<Chart countrys={countries.length ? countries : [{ ...vaccines[37] }]} />
+						<Chart countries={countries.length ? countries : [{ ...vaccines[37] }]} />
 					</section>
 				</>
 			)}
