@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import closeModal from '../assets/cancel.svg';
 
+import '@styles/components/VaccinesModal.css';
+
 const VaccinesModal = ({ setShape, countries, closeDash }) => {
 	const [select, setSelect] = useState(true);
 

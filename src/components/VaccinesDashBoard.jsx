@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useGlobalResponsive from '@hooks/useGlobalResponsive';
 
 import VaccinesModal from './VaccinesModal';
 
