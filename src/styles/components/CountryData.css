@@ -8,6 +8,7 @@
 	background: var(--second-bg);
 	transform: translateY(102%);
 	overflow-y: scroll;
+	z-index: 10;
 }
 
 .countryDataBox--country {

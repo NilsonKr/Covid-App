@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import VaccinesModal from './VaccinesModal';
 
 import dashBoardIcon from '../assets/charts.svg';
 import '@styles/components/VaccinesDashBoard.css';
 
-//TODO:
-//IMPLEMENT createPortal
+const VaccinesDashBoard = ({ setShape, countries }) => {
+	const [open, setOpen] = useState(false);
 
-const VaccinesDashBoard = () => {
 	return (
 		<section className='vaccinesDashBoard'>
-			<div className='vaccines__burguerMenu'>
+			<div className='vaccines__burguerMenu' onClick={() => setOpen(!open)}>
 				<img src={dashBoardIcon} alt='Vaccines Info' />
 			</div>
-			<VaccinesModal />
+			{open && (
+				<VaccinesModal setShape={setShape} countries={countries} closeDash={setOpen} />
+			)}
 		</section>
 	);
 };

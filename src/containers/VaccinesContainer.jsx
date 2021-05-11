@@ -11,6 +11,8 @@ import '@styles/components/Vaccines.css';
 const ChartsContainer = () => {
 	const { vaccines, setVaccines } = useContext(Context);
 	const [countries, setChoosen] = useState([]);
+	const [shape, setShape] = useState('line');
+	const defaultCountry = [{ ...vaccines[37] }];
 
 	useEffect(() => {
 		fetch(
@@ -33,9 +35,15 @@ const ChartsContainer = () => {
 			{vaccines.length && (
 				<>
 					<SelectBar choosen={countries} setChoosen={setChoosen} />
-					<VaccinesDashBoard />
+					<VaccinesDashBoard
+						setShape={setShape}
+						countries={countries.length ? countries : defaultCountry}
+					/>
 					<section className='chart__container'>
-						<Chart countries={countries.length ? countries : [{ ...vaccines[37] }]} />
+						<Chart
+							countries={countries.length ? countries : defaultCountry}
+							shape={shape}
+						/>
 					</section>
 				</>
 			)}

@@ -4,10 +4,12 @@ import getVaccineData from '../utils/getVaccineData';
 import getMax from '../utils/getMaxVaccinated';
 import getVaccineLabel from '../utils/getVaccineLabel';
 
-const Chart = ({ countries }) => {
+const Chart = ({ countries, shape }) => {
+	const ChartShape = shape === 'line' ? Line : Bar;
+
 	return (
 		<div>
-			<Line
+			<ChartShape
 				data={{
 					labels: getVaccineLabel(countries),
 					datasets: countries.map(country => ({
