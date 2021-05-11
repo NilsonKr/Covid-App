@@ -6,8 +6,8 @@ import closeModal from '../assets/cancel.svg';
 
 import '@styles/components/VaccinesModal.css';
 
-const VaccinesModal = ({ setShape, countries, closeDash }) => {
-	const [select, setSelect] = useState(true);
+const VaccinesModal = ({ setShape, countries, closeDash, shape }) => {
+	const [select, setSelect] = useState(shape === 'line' ? true : false);
 
 	const handleSelect = shape => {
 		setSelect(!select);

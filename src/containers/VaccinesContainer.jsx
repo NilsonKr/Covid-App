@@ -51,6 +51,7 @@ const ChartsContainer = () => {
 				<>
 					<SelectBar choosen={countries} setChoosen={setChoosen} />
 					<VaccinesDashBoard
+						shape={shape}
 						setShape={setShape}
 						countries={countries.length ? countries : defaultCountry}
 					/>

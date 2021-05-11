@@ -6,7 +6,7 @@ import VaccinesModal from './VaccinesModal';
 import dashBoardIcon from '../assets/charts.svg';
 import '@styles/components/VaccinesDashBoard.css';
 
-const VaccinesDashBoard = ({ setShape, countries }) => {
+const VaccinesDashBoard = ({ setShape, countries, shape }) => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -15,7 +15,12 @@ const VaccinesDashBoard = ({ setShape, countries }) => {
 				<img src={dashBoardIcon} alt='Vaccines Info' />
 			</div>
 			{open && (
-				<VaccinesModal setShape={setShape} countries={countries} closeDash={setOpen} />
+				<VaccinesModal
+					shape={shape}
+					setShape={setShape}
+					countries={countries}
+					closeDash={setOpen}
+				/>
 			)}
 		</section>
 	);
