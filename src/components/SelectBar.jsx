@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { Context } from '@context/ContextApp';
 import useSearch from '@hooks/useSearch';
 import addCountry from '../utils/addCountry';
@@ -14,6 +14,24 @@ const SelectBar = ({ choosen, setChoosen }) => {
 	const [query, setQuery] = useState('');
 	const searchInput = useRef(null);
 
+	//Handle Close of data box
+	function handleClose(ev) {
+		const classList = ev.target.classList;
+		const includes = classList.contains('notClose');
+
+		if (!includes) {
+			setOpen(false);
+		}
+	}
+
+	useEffect(() => {
+		document.body.addEventListener('click', handleClose);
+
+		return function cleanup() {
+			document.body.removeEventListener('click', handleClose);
+		};
+	}, []);
+
 	//Render in order of query
 	const filteredCountries = useSearch(query, vaccines);
 
@@ -23,15 +41,6 @@ const SelectBar = ({ choosen, setChoosen }) => {
 
 		setChoosen(newChoosen);
 	};
-
-	document.body.addEventListener('click', ev => {
-		const classList = ev.target.classList;
-		const includes = classList.contains('notClose');
-
-		if (!includes) {
-			setOpen(false);
-		}
-	});
 
 	return (
 		<section className={`selectBox ${isOpen ? 'onHover' : ''}`}>

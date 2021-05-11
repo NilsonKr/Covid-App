@@ -8,7 +8,7 @@ const Chart = ({ countries, shape }) => {
 	const ChartShape = shape === 'line' ? Line : Bar;
 
 	return (
-		<div>
+		<div className='main--chart'>
 			<ChartShape
 				data={{
 					labels: getVaccineLabel(countries),
@@ -23,6 +23,7 @@ const Chart = ({ countries, shape }) => {
 					})),
 				}}
 				height={600}
+				width={800}
 				options={{
 					maintainAspectRatio: false,
 					scales: {

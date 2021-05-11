@@ -9,4 +9,17 @@
 
 .chart__container {
 	width: 100%;
+	overflow-x: scroll;
+}
+
+.chart__container::-webkit-scrollbar {
+	height: 6px;
+}
+.chart__container::-webkit-scrollbar-thumb {
+	background-color: var(--second-color);
+	border-radius: 6px;
+}
+
+.main--chart {
+	min-width: 1200px;
 }

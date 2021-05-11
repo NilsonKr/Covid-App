@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import getTotalVaccinated from '../utils/getTotalVaccinated';
 
 import closeModal from '../assets/cancel.svg';
 
@@ -49,10 +50,7 @@ const VaccinesModal = ({ setShape, countries, closeDash }) => {
 							></div>
 							<p>
 								{/* Set Country Name and last total people vaccinated register */}
-								<span>{country.country} :</span>{' '}
-								{country.data[country.data.length - 1].people_vaccinated.toLocaleString(
-									'de-DE'
-								)}
+								<span>{country.country} :</span> {getTotalVaccinated(country)}
 							</p>
 						</div>
 					))}

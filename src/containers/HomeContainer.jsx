@@ -7,7 +7,7 @@ import Countrys from '@components/Countrys';
 import SearchBar from '@components/SearchBar';
 
 import '@styles/components/Home.css';
-import chartsIcon from '../assets/charts.svg';
+import vaccineIcon from '../assets/vaccine.svg';
 
 const HomeContainer = () => {
 	const { data, setData, setCountries, CovidApi } = useContext(Context);
@@ -27,7 +27,7 @@ const HomeContainer = () => {
 			{data.Countries && (
 				<>
 					<Link className='charts--button' to='/charts'>
-						<img src={chartsIcon} alt='Charts' />
+						<img src={vaccineIcon} alt='Charts' />
 					</Link>
 					<Global />
 					<SearchBar />
