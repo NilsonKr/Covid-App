@@ -24,8 +24,8 @@ const CountryData = ({ countrys, choosen, setChoosen, setQuery }) => {
 						//Read About checked property with onChange Handler
 						onChange={event => false}
 					/>
-					<span className='checkMark'></span>
-					<h2>{data.country}</h2>
+					<span className='checkMark notClose'></span>
+					<h2 className='notClose'>{data.country}</h2>
 				</label>
 			))}
 		</div>

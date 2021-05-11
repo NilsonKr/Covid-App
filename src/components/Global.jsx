@@ -11,7 +11,7 @@ const Global = () => {
 	const { data } = useContext(Context);
 
 	return (
-		<section className={(isOpen && 'global global--active ') || ''}>
+		<section className={(isOpen && 'global global--active ') || 'global--hidden'}>
 			<div className='global__menu'>
 				<img
 					src={GlobalIcon}

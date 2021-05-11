@@ -4,6 +4,7 @@ import getColor from '../utils/randomColors';
 
 import Chart from '@components/Chart';
 import SelectBar from '@components/SelectBar';
+import VaccinesDashBoard from '@components/VaccinesDashBoard';
 
 import '@styles/components/Vaccines.css';
 
@@ -32,6 +33,7 @@ const ChartsContainer = () => {
 			{vaccines.length && (
 				<>
 					<SelectBar choosen={countries} setChoosen={setChoosen} />
+					<VaccinesDashBoard />
 					<section className='chart__container'>
 						<Chart countries={countries.length ? countries : [{ ...vaccines[37] }]} />
 					</section>
