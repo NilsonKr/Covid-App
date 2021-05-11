@@ -15,12 +15,15 @@
 
 .selectBox__data {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 }
 
 .selectBox--country {
 	padding: 5px;
-	margin: 0 5px;
+	margin: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -66,6 +69,11 @@
 	border-bottom: 4px solid black;
 	transform: rotate(45deg);
 }
+
+.onHover {
+	box-shadow: 0 0 6px 2px var(--second-color);
+}
+
 .selectBox--icon:hover {
 	background: #cecece;
 }

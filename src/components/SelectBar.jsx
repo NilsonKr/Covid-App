@@ -24,8 +24,17 @@ const SelectBar = ({ choosen, setChoosen }) => {
 		setChoosen(newChoosen);
 	};
 
+	document.body.addEventListener('click', ev => {
+		const classList = ev.target.classList;
+		const includes = classList.contains('notClose');
+
+		if (!includes) {
+			setOpen(false);
+		}
+	});
+
 	return (
-		<section className='selectBox'>
+		<section className={`selectBox ${isOpen ? 'onHover' : ''}`}>
 			<div className='selectBox__data'>
 				{choosen.map(item => (
 					<div
@@ -38,6 +47,7 @@ const SelectBar = ({ choosen, setChoosen }) => {
 					</div>
 				))}
 				<input
+					className='selectBox--input notClose'
 					ref={searchInput}
 					type='text'
 					placeholder='Select a country...'
@@ -50,7 +60,7 @@ const SelectBar = ({ choosen, setChoosen }) => {
 				className={`selectBox--icon ${isOpen ? 'selectBox--open' : ''}`}
 				onClick={() => setOpen(!isOpen)}
 			>
-				<span></span>
+				<span className='notClose'></span>
 			</div>
 			{isOpen && (
 				<CountryData

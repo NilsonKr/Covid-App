@@ -15,8 +15,9 @@ const CountryData = ({ countrys, choosen, setChoosen, setQuery }) => {
 	return (
 		<div className='countryDataBox__container'>
 			{countrys.map(data => (
-				<label className='countryDataBox--country checkbox' key={data.iso_code}>
+				<label className='countryDataBox--country checkbox notClose' key={data.iso_code}>
 					<input
+						className='notClose'
 						type='checkbox'
 						onClick={() => handleAdd(data)}
 						checked={data.isAdded}
