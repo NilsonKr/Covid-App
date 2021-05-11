@@ -68,6 +68,7 @@
 	border-right: 4px solid black;
 	border-bottom: 4px solid black;
 	transform: rotate(45deg);
+	transition: all 0.5s;
 }
 
 .onHover {
@@ -78,6 +79,6 @@
 	background: #cecece;
 }
 
-.selectBox--open {
-	transform: rotate(180deg);
+.selectBox--icon span.selectBox--open {
+	transform: rotate(225deg);
 }

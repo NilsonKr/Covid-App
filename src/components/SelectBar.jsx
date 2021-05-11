@@ -56,11 +56,8 @@ const SelectBar = ({ choosen, setChoosen }) => {
 					onChange={() => setQuery(searchInput.current.value)}
 				/>
 			</div>
-			<div
-				className={`selectBox--icon ${isOpen ? 'selectBox--open' : ''}`}
-				onClick={() => setOpen(!isOpen)}
-			>
-				<span className='notClose'></span>
+			<div className='selectBox--icon' onClick={() => setOpen(!isOpen)}>
+				<span className={`notClose ${isOpen ? 'selectBox--open' : ''}`}></span>
 			</div>
 			{isOpen && (
 				<CountryData
