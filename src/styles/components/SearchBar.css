@@ -9,9 +9,10 @@
 }
 
 .search--bar {
+	max-height: 100px;
+	width: 90%;
 	display: flex;
 	justify-content: space-between;
-	width: 90%;
 	padding: 10px 5px;
 	border-radius: 15px;
 	border: 1px solid #cecece;
@@ -20,7 +21,6 @@
 
 .search--bar input {
 	width: 90%;
-	max-height: 100px;
 	padding: 3px;
 	color: var(--font-color);
 	font-size: 1.2rem;
